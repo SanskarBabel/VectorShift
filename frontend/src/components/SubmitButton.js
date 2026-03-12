@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { submitPipeline } from "../submit";
+import { submitPipeline } from "../submitPipeline";
 
 export function SubmitButton({ nodes, edges }) {
   const [loading, setLoading] = useState(false);
