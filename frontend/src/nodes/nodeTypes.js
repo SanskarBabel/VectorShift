@@ -1,12 +1,12 @@
-import { InputNode } from "./inputNode";
-import { OutputNode } from "./outputNode";
-import { LLMNode } from "./llmNode";
-import { TextNode } from "./textNode";
-import { TransformNode } from "./transformNode";
-import { FilterNode } from "./filterNode";
-import { MergeNode } from "./mergeNode";
-import { APINode } from "./apiNode";
-import { MemoryNode } from "./memoryNode";
+import { InputNode } from "./InputNode";
+import { OutputNode } from "./OutputNode";
+import { LLMNode } from "./LLMNode";
+import { TextNode } from "./TextNode";
+import { TransformNode } from "./TransformNode";
+import { FilterNode } from "./FilterNode";
+import { MergeNode } from "./MergeNode";
+import { APINode } from "./ApiNode";
+import { MemoryNode } from "./MemoryNode";
 
 export const nodeTypes = {
   customInput: InputNode,
