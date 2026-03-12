@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './BaseNode';
+import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './baseNode';
 
 export function MergeNode({ id, data }) {
   const [separator, setSeparator] = useState(data?.separator || '\\n');

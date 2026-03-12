@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './BaseNode';
+import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './baseNode';
 
 export function APINode({ id, data }) {
   const [url, setUrl] = useState(data?.url || '');

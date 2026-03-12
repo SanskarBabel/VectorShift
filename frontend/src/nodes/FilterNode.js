@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './BaseNode';
+import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './baseNode';
 
 export function FilterNode({ id, data }) {
   const [condition, setCondition] = useState(data?.condition || 'contains');
