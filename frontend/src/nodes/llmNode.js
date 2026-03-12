@@ -1,34 +1,37 @@
-// llmNode.js
+import React, { useState } from 'react';
+import { BaseNode, FieldLabel, FieldSelect } from './baseNode';
 
-import { Handle, Position } from 'reactflow';
-
-export const LLMNode = ({ id, data }) => {
+export function LLMNode({ id, data }) {
+  const [model, setModel] = useState(data?.model || 'gpt-4o');
 
   return (
-    <div style={{width: 200, height: 80, border: '1px solid black'}}>
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-system`}
-        style={{top: `${100/3}%`}}
+    <BaseNode
+      id={id}
+      title="LLM"
+      icon="🧠"
+      accentColor="#7c6af7"
+      inputs={[
+        { id: 'system', label: 'system' },
+        { id: 'prompt', label: 'prompt' },
+      ]}
+      outputs={[{ id: 'response', label: 'response' }]}
+    >
+      <FieldLabel>Model</FieldLabel>
+      <FieldSelect
+        value={model}
+        onChange={e => setModel(e.target.value)}
+        options={[
+          { value: 'gpt-4o', label: 'GPT-4o' },
+          { value: 'gpt-4-turbo', label: 'GPT-4 Turbo' },
+          { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo' },
+          { value: 'claude-3-opus', label: 'Claude 3 Opus' },
+          { value: 'claude-3-sonnet', label: 'Claude 3 Sonnet' },
+          { value: 'gemini-pro', label: 'Gemini Pro' },
+        ]}
       />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        style={{top: `${200/3}%`}}
-      />
-      <div>
-        <span>LLM</span>
+      <div style={{ marginTop: 10, fontSize: 10, color: 'var(--text-dim)', fontFamily: 'var(--font-mono)' }}>
+        <span style={{ color: '#7c6af7' }}>● </span>system + prompt → response
       </div>
-      <div>
-        <span>This is a LLM.</span>
-      </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-      />
-    </div>
+    </BaseNode>
   );
 }
