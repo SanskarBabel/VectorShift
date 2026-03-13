@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BaseNode, FieldLabel, FieldSelect } from './baseNode';
+import { BaseNode, FieldLabel, FieldSelect } from './BaseNode';
 
 export function TransformNode({ id, data }) {
   const [op, setOp] = useState(data?.operation || 'uppercase');

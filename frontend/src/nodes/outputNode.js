@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './baseNode';
+import { BaseNode, FieldLabel, FieldInput, FieldSelect } from './BaseNode';
 
 export function OutputNode({ id, data }) {
   const [name, setName] = useState(data?.outputName || 'output');
